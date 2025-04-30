@@ -13,6 +13,7 @@ if st.button("Click to Decode", type="primary"):
     word_list= text_input.split()
 
     skip=False
+    flag=False
     message = []
     decoded_message = ''
     for word in word_list:
@@ -38,6 +39,7 @@ if st.button("Click to Decode", type="primary"):
             if num.is_integer() and num > 0:
                 min_num.append(num)
             else:
+                flag=True
                 min_num.append(32)
         
         message.append(min(min_num))
@@ -52,6 +54,11 @@ if st.button("Click to Decode", type="primary"):
         st.write("Decoded message:\n> ",decoded_message)
     elif skip:
         skip=False
+        flag=False
         st.write("Please, type ONLY :red[four-digit] words separated by spaces in the input box\n (Check for typo)")
+    elif flag:
+        skip=False
+        flag=False
+        st.write("Some of the words typed :red[do not] have definitive numeric core.")
     else:
         st.write("Please, type the four-digit words in the input box.")
