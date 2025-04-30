@@ -50,7 +50,7 @@ if st.button("Click to Decode", type="primary"):
                 decoded_message += ' '
             decoded_message += chr(int(letter)+96)
     
-    if len(decoded_message)>0:
+    if len(decoded_message)>0 and not flag:
         st.write("Decoded message:\n> ",decoded_message)
     elif skip:
         skip=False
