@@ -37,6 +37,8 @@ if st.button("Click to Decode", type="primary"):
         for num in result:
             if num.is_integer() and num > 0:
                 min_num.append(num)
+            else:
+                min_num.append(32)
         
         message.append(min(min_num))
 
