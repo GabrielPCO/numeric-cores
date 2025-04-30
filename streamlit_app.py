@@ -57,7 +57,7 @@ if st.button("Click to Decode", type="primary"):
     
     if len(decoded_message)>0:
         st.write("Decoded message:\n> ",decoded_message)
-    elif not typo:
+    elif not typo and not flag:
         st.write("Please, type the four-digit words in the input box.")
 
     if flag:
