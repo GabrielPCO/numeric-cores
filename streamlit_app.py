@@ -59,6 +59,7 @@ if st.button("Click to Decode", type="primary"):
     elif flag:
         skip=False
         flag=False
+        st.write("Decoded message:\n> ",decoded_message)
         st.write("Some of the words typed :red[do not] have definitive numeric core.")
     else:
         st.write("Please, type the four-digit words in the input box.")
