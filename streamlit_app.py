@@ -17,6 +17,7 @@ if st.button("Click to Decode", type="primary"):
     flag=False
     for word in word_list:
         if len(word)!=4:
+            message = []
             st.write("Please, type ONLY :red[four-digit] words separated by spaces in the input box\n (Check for typo)")
             break
         output = []
