@@ -6,7 +6,8 @@ st.markdown('''
 Type in the input box all four-digit words from the message to be decoded. (Separate words by spaces)
 ''')
 
-text_input = str(st.text_input("👇","PIGS SAND MAIL DATE HEAD CLAM PEAK HEAT JOYA WELL TOAD CARD WILL TAPE LEGS TREE ROAD MAID SLAB ROCK HAND VASE SAFE CLAY TOES"))
+#"PIGS SAND MAIL DATE HEAD CLAM PEAK HEAT JOYA WELL TOAD CARD WILL TAPE LEGS TREE ROAD MAID SLAB ROCK HAND VASE SAFE CLAY TOES"
+text_input = str(st.text_input("👇","AREA PEAK EACH MAIL FACE CLAM VASE WELL IDOL PIGS LACK JEST MAID CLOG ROCK WELD OBEY HAIR FILE OMEN NOOK SAFE GRUB JOYA TOES"))
 
 if st.button("Click to Decode", type="primary"):
     word_list= text_input.split()
