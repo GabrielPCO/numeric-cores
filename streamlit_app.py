@@ -11,15 +11,12 @@ text_input = str(st.text_input("👇","AREA PEAK EACH MAIL FACE CLAM VASE WELL I
 
 if st.button("Click to Decode", type="primary"):
     word_list= text_input.split()
-
-    skip=False
-    flag=False
     message = []
     decoded_message = ''
+    flag=False
     for word in word_list:
         if len(word)!=4:
-            skip=True
-            decoded_message = ''
+            st.write("Please, type ONLY :red[four-digit] words separated by spaces in the input box\n (Check for typo)")
             break
         output = []
         for character in word.lower():
@@ -35,31 +32,28 @@ if st.button("Click to Decode", type="primary"):
         result.append(((output[0]/output[1])*output[2])-output[3])
 
         min_num=[]
+        count=0
         for num in result:
             if num.is_integer() and num > 0:
+                count+=1
                 min_num.append(num)
-            else:
-                flag=True
-                min_num.append(32)
-        
-        message.append(min(min_num))
 
-    if not skip:
+        if count==0:
+            flag=True
+
+        if len(min_num)>0:
+            message.append(min(min_num))
+
+    if len(message)>0:
         for i, letter in enumerate(message):
             if i%5==0 and i!=0:
                 decoded_message += ' '
             decoded_message += chr(int(letter)+96)
     
-    if len(decoded_message)>0 and not flag:
+    if len(decoded_message)>0:
         st.write("Decoded message:\n> ",decoded_message)
-    elif skip:
-        skip=False
-        flag=False
-        st.write("Please, type ONLY :red[four-digit] words separated by spaces in the input box\n (Check for typo)")
-    elif flag:
-        skip=False
-        flag=False
-        st.write("Decoded message:\n> ",decoded_message)
-        st.write("Some of the words typed :red[do not] have definitive numeric core.")
     else:
         st.write("Please, type the four-digit words in the input box.")
+
+    if flag:
+        st.write("Some of the words typed :red[do not] have definitive numeric core.")
