@@ -12,6 +12,7 @@ text_input = str(st.text_input("👇","AREA PEAK EACH MAIL FACE CLAM VASE WELL I
 if st.button("Click to Decode", type="primary"):
     word_list= text_input.split()
     message = []
+    error= []
     decoded_message = ''
     flag=False
     for word in word_list:
@@ -40,6 +41,7 @@ if st.button("Click to Decode", type="primary"):
 
         if count==0:
             flag=True
+            error.append(word)
 
         if len(min_num)>0:
             message.append(min(min_num))
@@ -56,4 +58,4 @@ if st.button("Click to Decode", type="primary"):
         st.write("Please, type the four-digit words in the input box.")
 
     if flag:
-        st.write("Some of the words typed :red[do not] have definitive numeric core.")
+        st.write("Some of the words typed :red[do not] have definitive numeric core: " + str(error))
