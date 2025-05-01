@@ -7,7 +7,7 @@ Type in the input box all four-digit words from the message to be decoded. (Sepa
 ''')
 
 #"PIGS SAND MAIL DATE HEAD CLAM PEAK HEAT JOYA WELL TOAD CARD WILL TAPE LEGS TREE ROAD MAID SLAB ROCK HAND VASE SAFE CLAY TOES"
-text_input = str(st.text_input("👇","AREA PEAK EACH MAIL FACE CLAM VASE WELL IDOL PIGS LACK JEST MAID CLOG ROCK WELD OBEY HAIR FILE OMEN NOOK SAFE GRUB JOYA TOES"))
+text_input = str(st.text_input("👇","AREA LEEK EACH DOCK FACE CALM SNUG PERK IDOL PIGS LACK JEST DUNE CLOG BALM WELD OBEY HAIR FILE OMEN NOOK MADE GRUB NAME FLOC"))
 
 if st.button("Click to Decode", type="primary"):
     word_list= text_input.split()
@@ -38,7 +38,7 @@ if st.button("Click to Decode", type="primary"):
         min_num=[]
         count=0
         for num in result:
-            if num.is_integer() and num > 0:
+            if num.is_integer() and num > 0 and num <= 27:
                 count+=1
                 min_num.append(num)
 
