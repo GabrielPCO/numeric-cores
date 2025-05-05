@@ -3,7 +3,7 @@ import streamlit as st
 st.markdown('''
 ## :blue[Blue] Prince Numerical Core :red[Decoder]
 
-Type in the input box all four-digit words from the message to be decoded. (Separate words by spaces)
+Type in the input box all four-character words from the message to be decoded. (Separate words by spaces)
 ''')
 
 #"PIGS SAND MAIL DATE HEAD CLAM PEAK HEAT JOYA WELL TOAD CARD WILL TAPE LEGS TREE ROAD MAID SLAB ROCK HAND VASE SAFE CLAY TOES"
@@ -20,7 +20,7 @@ if st.button("Click to Decode", type="primary"):
         if len(word)!=4:
             message = []
             typo=True
-            st.write("Please, type ONLY :red[four-digit] words separated by spaces in the input box\n (Check for typo)")
+            st.write("Please, type ONLY :red[four-character] words separated by spaces in the input box\n (Check for typo)")
             break
         output = []
         for character in word.lower():
@@ -58,7 +58,7 @@ if st.button("Click to Decode", type="primary"):
     if len(decoded_message)>0:
         st.write("Decoded message:\n> ",decoded_message)
     elif not typo and not flag:
-        st.write("Please, type the four-digit words in the input box.")
+        st.write("Please, type the four-characters words in the input box.")
 
     if flag:
         st.write("Some of the words typed :red[do not] have definitive numeric core: " + str(error))
